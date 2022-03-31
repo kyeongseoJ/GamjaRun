@@ -22,9 +22,6 @@ public class PlayerController : MonoBehaviour
     [Header("이동속도")]
     [SerializeField] [Range(1f, 30f)] float moveSpeed = 8f;
 
-    [Header("점프강도")]
-    [SerializeField] [Range(1f, 30f)] float jumpforce = 10f;
-
     void Start()
     {
         // 전역변수의 초기화 진행
