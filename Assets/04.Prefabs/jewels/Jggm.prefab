@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6286838831488507875
+--- !u!1 &8741178003128319917
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6286838831488507879}
-  - component: {fileID: 6286838831488507876}
-  - component: {fileID: 6286838831488507877}
-  - component: {fileID: 6286838831488507874}
+  - component: {fileID: 8741178003128319915}
+  - component: {fileID: 8741178003128319916}
+  - component: {fileID: 8741178003128319913}
+  - component: {fileID: 8741178003128319914}
+  - component: {fileID: 1705603275}
   m_Layer: 0
-  m_Name: Jred
+  m_Name: Jggm
   m_TagString: Jewel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &6286838831488507879
+  m_IsActive: 1
+--- !u!4 &8741178003128319915
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286838831488507875}
+  m_GameObject: {fileID: 8741178003128319917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.84, y: -2.04, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6286838831488507876
+--- !u!212 &8741178003128319916
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286838831488507875}
+  m_GameObject: {fileID: 8741178003128319917}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,43 +74,62 @@ SpriteRenderer:
   m_SortingLayerID: 952167527
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -4654985550821593997, guid: fc226ea3c1cd42743929eb9831b4834d, type: 3}
+  m_Sprite: {fileID: 9108990608531037781, guid: 67fde3f0409310d45b2ab41f816b98c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.90625, y: 1.625}
+  m_Size: {x: 1.78125, y: 1.15625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &6286838831488507877
-CircleCollider2D:
+--- !u!70 &8741178003128319913
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286838831488507875}
+  m_GameObject: {fileID: 8741178003128319917}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.8
---- !u!114 &6286838831488507874
+  m_Offset: {x: -0.000000009664095, y: -0.081068315}
+  m_Size: {x: 1.7812502, y: 0.9941179}
+  m_Direction: 1
+--- !u!114 &8741178003128319914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286838831488507875}
+  m_GameObject: {fileID: 8741178003128319917}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9844fbc59fded5f4e81524007a7f1c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotItem: {fileID: 8877946639872859473, guid: 1e4eb05ab31647d4d8078cfa47e2f52f, type: 3}
+  slotItem: {fileID: 3322981513702202254, guid: 90a450789c6de8943898ed2afc0cbb30, type: 3}
+--- !u!95 &1705603275
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8741178003128319917}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bd83d8690ee5c84aaf6eae227b28b31, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
