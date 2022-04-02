@@ -11,7 +11,7 @@ public class JewelSpawner : MonoBehaviour
     private Vector2 poolPosition = new Vector2(0, -35);
 
     private void OnEnable()
-    {
+    { 
         // 보석 생성 확률 
         for (int i = 0; i < jewels.Length; i++)
         {
