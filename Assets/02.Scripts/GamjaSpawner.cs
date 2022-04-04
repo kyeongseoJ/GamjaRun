@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// 체력에 관한 아이템 생성을 위한 스크립트
 public class GamjaSpawner : MonoBehaviour
 {
     // 생성할 감자의 원본 프리팹

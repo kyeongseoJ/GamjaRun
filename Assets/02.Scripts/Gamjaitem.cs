@@ -9,7 +9,7 @@ public class Gamjaitem : MonoBehaviour
 
     private void OnEnable()
     {
-        // 몹의 수만큼 루프
+        // 감자의 수만큼 루프
         for (int i = 0; i < gamjas.Length; i++)
         {
             gamjas[i].SetActive(Random.Range(0, 7) == 0 ? true : false);

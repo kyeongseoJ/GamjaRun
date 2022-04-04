@@ -11,10 +11,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; // 싱글턴을 할당할 전역 변수
 
     public bool isGameOver = false; // 게임오버 상태를 표현하는 변수 false : Gameover   true : Not Gameover 
-    public Text scoreText; // 점수를 출력할 UI 텍스트
+    public GameObject enddingUI; // 엔딩을 출력할 UI 텍스트
     public GameObject gameoverUI; // 게임오버시 활성화할 UI 오브젝트
 
-    private int score = 0; // 게임 점수
 
     public int hp = 2; // 체력 변수 설정
     public Text hpText; // 체력표시할 UI 텍스트
@@ -23,9 +22,6 @@ public class GameManager : MonoBehaviour
 
 
     public bool isPause = false;// 일시정지 상태
-
-    // 최고기록을 표시할 텍스트 컴포넌트
-    public Text recordText;
 
 
     // 게임 시작과 동시에 싱글턴을 구성
@@ -48,26 +44,15 @@ public class GameManager : MonoBehaviour
     // 게임 오버 상태에서 게임을 재시작 할 수 있게 하는 처리 구현
     void Update()
     {
-        // 게임 오버 상태에서 사용자가 마우스 왼쪽 버튼을 클릭한다면
-        if (isGameOver && Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // 게임 오버 상태에서 사용자가 스페이스바를 클릭한다면
+        if (isGameOver && Input.GetKeyDown(KeyCode.Space)){
+
+            SceneManager.LoadScene(1);
+            PickUp.countreset();
         }
     }
 
-    
-    // 점수 ui
-    public void AddScore(int newScore)
-    {
-        // 게임오버가 아니라면
-        if (!isGameOver)
-        {
-            // 점수를 증가
-            score += newScore;
-            // 스코어를 UI로 표시
-            scoreText.text = "Score : " + score;
-        }
-    }
+   
 
     // 플레이어가 사망 시 게임 오버를 실행하는 메서드
     public void OnPlayerDead()
@@ -79,6 +64,17 @@ public class GameManager : MonoBehaviour
 
     }
 
+    // 플레이어 보석 다 모으면 엔딩
+    public void OnPlayerEndding()
+    {
+        Invoke("OnPlayerEndding", 2f);
+        isGameOver = true;
+        // 엔딩 활성화
+        enddingUI.SetActive(true);
+
+
+    }
+
     // 체력 감소 표시
     public void HpUpdate()
     {
@@ -86,6 +82,7 @@ public class GameManager : MonoBehaviour
         hpText.text = "HP " + hp;
 
     }
+
 
     // 메뉴 클릭시 화면 일시정지 및 패널 활성화
     public void OnMenu()

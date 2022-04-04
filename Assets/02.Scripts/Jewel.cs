@@ -12,6 +12,7 @@ public class Jewel : MonoBehaviour
         // 보석 생성 확률 
         for (int i = 0; i < jewels.Length; i++)
         {
+            //Debug.Log("random");
             jewels[i].SetActive(Random.Range(0, 6) == 0 ? true : false);
         }
     }

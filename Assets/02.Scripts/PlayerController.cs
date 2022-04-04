@@ -16,11 +16,12 @@ public class PlayerController : MonoBehaviour
     // 사용할 애니메이터 컴포넌트
     private Animator animator;
 
-    // 충돌 애니메이션 색 변화를 위한 컴포넌트 가져오기
-    private SpriteRenderer spriteRenderer;
+    // 보석을 다 모으면 애니메이션 재생 판단
+    private bool isFulled = false;
 
-    public static string[] items = new string[7];
+    //public static string[] items = new string[7];
 
+   
 
     float moveX, moveY;
 
@@ -33,7 +34,6 @@ public class PlayerController : MonoBehaviour
         // 게임 오브젝트로부터 사용할 컴포넌트들을 가져와 변수에 할당
         playerRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
@@ -45,6 +45,10 @@ public class PlayerController : MonoBehaviour
 
         PlayerMove();
 
+        SweetPotato();
+           
+        
+        
     }
 
     void PlayerMove()
@@ -73,34 +77,35 @@ public class PlayerController : MonoBehaviour
         // 게임매니저의 게임오버 처리 실행(게임매니저 안의 instance에 접근처리가 필요하다.)
         GameManager.instance.OnPlayerDead();
 
-
     }
 
-    //private IEnumerator HitAnimation()
-    //{
-    //     플레이어 색상 변경
-    //    spriteRenderer.color = Color.red;
-    //    0.1초 대기
-    //    yield return new WaitForSeconds(0.1f);
-    //     원래 색상으로
-    //    spriteRenderer.color = Color.white;
-    //}
+    void SweetPotato()
+    {
+        if (PickUp.countinven == 7)
+        {
+            animator.SetBool("Fulled", isFulled);
+            isFulled = true;
+            GameManager.instance.OnPlayerEndding();
+        }
+    }
+
 
     // Hmm...?
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 충돌이 일어날 떄 충돌한 상대방의이름을 배열로 넣어준다
-        if(collision.tag == "Jewel")
-        {
-            for (int i = 0; i < 7; i++)
-            {
-                items[i] = collision.name;
-                // 근데 여기서 이름 넣은거랑 동일한지 판별해서 생성 안되게 하는거랑 연관이 있습니다.
-            }
-        }
+        //if(collision.tag == "Jewel")
+        //{
+        //    for (int i = 0; i < 7; i++)
+        //    {
+        //        items[i] = collision.name;
+        //        // 근데 여기서 이름 넣은거랑 동일한지 판별해서 생성 안되게 하는거랑
+        //        // 연관이... 있습니다.
+        //    }
+        //}
         if (collision.tag == "Dead" && !isDead && GameManager.instance.hp > 0)
         {
-           // HitAnimation();
+           
             GameManager.instance.hp--;
             GameManager.instance.HpUpdate();
             collision.gameObject.SetActive(false);
