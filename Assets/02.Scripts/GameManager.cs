@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour
     // 게임 오버 상태에서 게임을 재시작 할 수 있게 하는 처리 구현
     void Update()
     {
-        // 게임 오버 상태에서 사용자가 스페이스바를 클릭한다면
-        if (isGameOver && Input.GetKeyDown(KeyCode.Space)){
+        // 게임 오버 상태에서 사용자가 스페이스바 혹은 좌클릭을 클릭한다면
+        if (isGameOver && Input.GetKeyDown(KeyCode.Space) || isGameOver && Input.GetMouseButtonDown(0)){
 
             SceneManager.LoadScene(1);
             PickUp.countreset();
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
     // 플레이어 보석 다 모으면 엔딩
     public void OnPlayerEndding()
     {
-        Invoke("OnPlayerEndding", 2f);
+        //Invoke("OnPlayerEndding", 2f);
         isGameOver = true;
         // 엔딩 활성화
         enddingUI.SetActive(true);

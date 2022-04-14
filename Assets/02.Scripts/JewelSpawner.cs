@@ -21,7 +21,7 @@ public class JewelSpawner : MonoBehaviour
     // 배치할 위치의 최대 x값
     public static float xMax = 8f;
     // 배치할 위치의 y값
-    public static float yPos = 0f;
+    public static float yPos = 1.5f;
 
     // 미리 생성한 보석들
     private GameObject[] jewels;
@@ -67,7 +67,7 @@ public class JewelSpawner : MonoBehaviour
             // 다음 배치까지의 시간 간격을 timeBetSpawnMin, timeBetSpawnMax 사이에서 랜덤 설정
             timeBetSpawn = Random.Range(timeBetSpawnMin, timeBetSpawnMax);
             // 배치할 위치의 높이를 일정하게 지정
-            float yPos = 1f;
+            float yPos = 1.5f;
 
 
             // 사용할 현재 순번의 보석, 게임의 오브젝트를 비활성화하고 즉시 다시 활성화

@@ -21,8 +21,11 @@ public class PlayerController : MonoBehaviour
 
     //public static string[] items = new string[7];
 
-   
+    // JoyStick1 스크립트 이동 
+    public JoystickValue value;
 
+
+    //이동구현 
     float moveX, moveY;
 
     [Header("이동속도")]
@@ -37,18 +40,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // 
     void Update()
     {
         // 플레이어 사망 시 더이상 움직임 처리 안함
         if (isDead) return;
-
+        // 플레이어 이동
         PlayerMove();
-
+        transform.Translate(value.joyTouch);
+        
+        // 변신
         SweetPotato();
            
-        
-        
     }
 
     void PlayerMove()
@@ -59,7 +61,7 @@ public class PlayerController : MonoBehaviour
         moveX = Input.GetAxis("Horizontal") * moveSpeed;
 
         //transform.position.y += (moveY*moveSpeed*Time.deltaTime;
-        transform.position += new Vector3(moveX, moveY,0)*Time.deltaTime;
+        transform.position += new Vector3(moveX, moveY, 0) * Time.deltaTime;
 
     }
 
@@ -90,7 +92,6 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    // Hmm...?
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 충돌이 일어날 떄 충돌한 상대방의이름을 배열로 넣어준다
