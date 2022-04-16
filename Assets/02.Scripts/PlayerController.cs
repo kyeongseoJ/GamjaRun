@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         if (isDead) return;
         // 플레이어 이동
         PlayerMove();
-        transform.Translate(value.joyTouch);
+        transform.Translate(value.joyTouch*0.3f);
         
         // 변신
         SweetPotato();

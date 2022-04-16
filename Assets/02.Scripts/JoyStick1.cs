@@ -26,7 +26,8 @@ public class JoyStick1 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
         {
             touch = touch.normalized;
         }
-        value.joyTouch = touch*0.25f;
+        value.joyTouch = touch*0.3f;
+        // 작은 원 이동반경
         handle.anchoredPosition = touch * widthHalf;
     }
 
@@ -35,6 +36,7 @@ public class JoyStick1 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
         OnDrag(eventData);
     }
 
+    // 핸들 손에서 떼면 제자리로(가운데원점으로)
     public void OnPointerUp(PointerEventData eventData)
     {
         value.joyTouch = Vector2.zero;

@@ -955,7 +955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: {fileID: 11400000, guid: ef66e6bf7e8e791408272d4d86d00bbb, type: 2}
-  moveSpeed: 6
+  moveSpeed: 4
 --- !u!114 &866693021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,7 +1505,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Restart to Space!
+  m_Text: Restart to Click!
 --- !u!222 &1053178993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2549,7 +2549,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -12.729044, y: -0.84647655}
+  m_Offset: {x: -12.363335, y: -0.84647655}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2560,7 +2560,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3779478, y: 12.866564}
+  m_Size: {x: 2.4342108, y: 12.866564}
   m_EdgeRadius: 0
 --- !u!61 &1943309513
 BoxCollider2D:
@@ -3158,7 +3158,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uAC10\uC790\uB3C4\uB9AC\uB294 \uACE0\uAD6C\uB9C8\uAC00 \uB418\uC5B4 \uD589\uBCF5\uD558\uAC8C
-    \uC0B4\uC558\uC2B5\uB2C8\uB2E4."
+    \uC0B4\uC558\uC2B5\uB2C8\uB2E4:)"
 --- !u!222 &2138585932
 CanvasRenderer:
   m_ObjectHideFlags: 0
